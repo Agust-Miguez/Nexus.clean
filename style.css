@@ -234,3 +234,221 @@ h1, h2 {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px -5px rgba(2, 136, 209, 0.4);
 }
+
+/* --- Common / Layout --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: var(--primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    width: 100%; /* Ensures alignment */
+}
+
+/* --- Trust Section (#confianza) --- */
+#confianza {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+#confianza .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.trust-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--accent);
+}
+
+/* --- About Section / Method (#nosotros) --- */
+#nosotros {
+    padding: 6rem 0;
+    background-color: var(--dark-bg);
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 2rem; /* Align with circle center roughly */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(to right, var(--glass-border) 0, var(--glass-border) 10px, transparent 10px, transparent 20px);
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    background: var(--dark-bg); /* Mask the line behind text */
+    padding: 1rem;
+    border: 1px solid var(--glass-border); /* Blueprint style box */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.step-number {
+    width: 3rem;
+    height: 3rem;
+    background: var(--dark-bg);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    position: relative; /* To sit on top of line */
+}
+
+.step h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.step p {
+    font-size: 0.9rem;
+    color: rgba(248, 250, 252, 0.7);
+}
+
+/* --- Services / Bento Grid (#servicios) --- */
+#servicios {
+    padding: 6rem 0;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.bento-card {
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Text at bottom often looks nice */
+    min-height: 240px;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+}
+
+/* Featured Card (Bio-Seguridad) */
+.bento-card.featured {
+    grid-column: span 1; /* Default */
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bento-card.featured {
+        grid-column: span 2;
+    }
+    .timeline::before {
+        display: block; /* Show line only on desktop layout where it makes sense */
+    }
+}
+
+@media (max-width: 767px) {
+    .timeline::before {
+        display: none; /* Hide line on mobile stack */
+    }
+}
+
+.card-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
+
+.bento-card:hover .card-bg-img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.bento-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.bento-card.featured h3 {
+    font-size: 2rem;
+    color: #fff; /* White pure */
+}
+
+.bento-card p {
+    color: rgba(248, 250, 252, 0.7);
+}
+
+.bento-card.featured p {
+    color: #fff;
+    font-weight: 500;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--accent);
+    margin-bottom: auto; /* Push content down */
+}
+
+/* Smartphone icon styling if needed specifically, svg inherits color */
