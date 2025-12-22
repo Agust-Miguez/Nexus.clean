@@ -1,21 +1,21 @@
 {
-    "name": "Nexus Clean",
-    "short_name": "NexusClean",
-    "description": "Soluciones de Limpieza Corporativa Premium",
-    "start_url": "./index.html",
-    "display": "standalone",
-    "background_color": "#0F172A",
-    "theme_color": "#0288D1",
-    "icons": [
-        {
-            "src": "assets/icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "assets/icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+  "name": "Nexus Clean",
+  "short_name": "Nexus",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0288D1",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

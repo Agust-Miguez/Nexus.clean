@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Nexus Clean</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos exclusivos para la 404 */
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+            cursor: none; /* Mantiene la inmersión */
+        }
+        .error-container {
+            position: relative;
+            z-index: 2;
+            padding: 3rem;
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 8rem;
+            line-height: 1;
+            background: var(--primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0;
+            font-weight: 800;
+        }
+        h2 { margin-bottom: 1rem; color: #fff; }
+        p { color: rgba(248,250,252,0.6); margin-bottom: 2rem; }
+        
+        /* Círculo decorativo */
+        .glow {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(41, 182, 246, 0.15), transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <div class="glow"></div>
+
+    <div class="error-container">
+        <h1>404</h1>
+        <h2>Zona Restringida</h2>
+        <p>El área que intenta acceder no existe o requiere credenciales de nivel superior.</p>
+        <a href="index.html" class="btn-cta">Volver a la Central</a>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
