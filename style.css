@@ -82,3 +82,155 @@ h1, h2 {
     pointer-events: none;
     z-index: 0;
 }
+
+/* --- Preloader --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-bg);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-pulse {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.5; transform: scale(0.95); }
+}
+
+/* --- Header --- */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: center; /* Adjust based on container/nav needs */
+    z-index: 100;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(15, 23, 42, 0.7); /* Fallback/Tint */
+    border-bottom: 1px solid var(--glass-border);
+}
+
+#main-header nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.btn-client-access {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1.5rem;
+    border-radius: 99px; /* Pill shape */
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-client-access:hover {
+    background: var(--accent);
+    color: var(--dark-bg);
+}
+
+/* --- Hero Section --- */
+#inicio {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    will-change: transform;
+    animation: respiracion 20s infinite ease-in-out;
+}
+
+@keyframes respiracion {
+    0% { transform: scale(1); filter: brightness(100%); }
+    50% { transform: scale(1.08); filter: brightness(110%); }
+    100% { transform: scale(1); filter: brightness(100%); }
+}
+
+#inicio .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+#inicio .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 800px;
+}
+
+#inicio h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+/* Greeting dynamic span if needed, simply inherits h1 for now or adds specific color */
+#greeting {
+    color: var(--accent);
+}
+
+.btn-cta {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(2, 136, 209, 0.4);
+}
