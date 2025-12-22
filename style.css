@@ -452,3 +452,168 @@ h1, h2 {
 }
 
 /* Smartphone icon styling if needed specifically, svg inherits color */
+
+/* --- Contact Section (#contacto) --- */
+#contacto {
+    padding: 6rem 0;
+    position: relative;
+    background: var(--dark-bg);
+}
+
+.contact-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    padding: 3rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+#contacto input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    border-radius: 0; /* Remove default radius */
+}
+
+#contacto input:focus {
+    outline: none;
+    border-bottom-color: var(--accent);
+}
+
+#contacto input::placeholder {
+    color: rgba(248, 250, 252, 0.4);
+}
+
+.btn-cta.full-width {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.guarantee {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(248, 250, 252, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* --- Mobile Sticky Bar --- */
+#mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+    display: flex; /* Hidden by default on desktop via media query logic below */
+    gap: 1rem;
+    z-index: 999;
+}
+
+.btn-sticky {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-sticky.call {
+    background: #334155; /* Dark Gray */
+    color: #fff;
+}
+
+.btn-sticky.whatsapp {
+    background: #25D366; /* WhatsApp Brand Green */
+    color: #fff;
+}
+
+/* Visibility Logic */
+@media (min-width: 768px) {
+    #mobile-sticky-bar {
+        display: none;
+    }
+}
+
+/* --- Footer --- */
+#main-footer {
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--glass-border);
+    color: rgba(248, 250, 252, 0.8);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: inherit;
+    width: 24px;
+    height: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 2rem;
+    font-size: 0.9rem;
+    color: rgba(248, 250, 252, 0.5);
+}
