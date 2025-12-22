@@ -617,3 +617,57 @@ h1, h2 {
     font-size: 0.9rem;
     color: rgba(248, 250, 252, 0.5);
 }
+
+/* --- Custom Cursor --- */
+#cursor-dot,
+#cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    display: none; /* Hidden by default, shown via JS on desktop */
+}
+
+@media (pointer: fine) {
+    #cursor-dot,
+    #cursor-outline {
+        display: block;
+    }
+}
+
+#cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+}
+
+#cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Hover State for Cursor */
+body.hovering #cursor-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(56, 189, 248, 0.1);
+    border-color: transparent;
+}
+
+/* --- Scroll Animations --- */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
