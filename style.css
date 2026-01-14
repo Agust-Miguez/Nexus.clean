@@ -242,3 +242,68 @@ body.hovering #cursor-outline {
         display: block !important;
     }
 }
+.btn-wsp {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* Verde Oficial WhatsApp */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 10000; /* Siempre encima de todo */
+    transition: all 0.3s ease;
+}
+
+/* Tamaño del icono SVG */
+.btn-wsp svg {
+    width: 32px;
+    height: 32px;
+    stroke: #fff;
+    fill: none;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.btn-wsp:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+    background-color: #20b857; /* Verde un poco más oscuro */
+}
+
+/* Animación de Pulso (Llama la atención) */
+.btn-wsp::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: #25D366;
+    opacity: 0.5;
+    z-index: -1;
+    animation: pulse-wsp 2s infinite;
+}
+
+@keyframes pulse-wsp {
+    0% { transform: scale(1); opacity: 0.5; }
+    70% { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+/* AJUSTE PARA MÓVIL (Para que no tape contenido o quede muy grande) */
+@media (max-width: 768px) {
+    .btn-wsp {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .btn-wsp svg {
+        width: 28px;
+        height: 28px;
+    }
+}
